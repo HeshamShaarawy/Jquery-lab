@@ -1,0 +1,123 @@
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+   }
+
+@font-face {
+    font-family: equilibrium;
+    src: url(resources/equilibrium.woff2);
+}
+   body {
+    background-color: #122142;
+    font-family: 'Lucida Sans';
+    color: white;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 20% auto 20%;
+    grid-template-rows: 10% auto 10%;
+    grid-template-areas:
+        'header header header'
+        'ctr-zone game-zone  help-zone'
+        'r-ft m-ft l-ft'    
+    ;
+    border: 2px white solid;
+  }
+  h1 {
+    border: 2px green solid;
+    color: green;
+    font-family: equilibrium, 'Lucida Sans';
+    grid-area: header;
+    text-align: center;
+    padding: 15px;         
+  }
+  nav{
+      grid-area: ctr-zone;
+      color: silver;
+      margin: 20px;
+  }
+  main{
+      grid-area: game-zone;
+      border: olivedrab 2px solid;
+      
+  }
+  #cover {
+        margin-left: 20%;
+        
+    }
+  #board {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(20, auto);
+    align-content: center;
+  }
+  .cell{
+    border: yellowgreen 1px solid;
+    width: 25px;
+    height: 25px;
+    font-size: 10px;
+        }
+  .help {
+      grid-area: help-zone;
+      color: yellow;
+      margin: 20px;
+  }
+
+  .footer {
+    grid-area: m-ft;  
+    color:tomato;
+
+  }
+
+  .cell {
+    background-color: teal;
+    border: white 2px solid;
+  }
+
+  button {
+      display: none;
+  }
+  #level {
+      color: yellowgreen;
+      margin: 10px;
+  }
+  #score {
+    color: yellowgreen;
+    margin: 10px;
+  }
+
+  .winning-message {
+    display: none;
+    position: fixed;
+    top :0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:rgba(0,0,0,.9);
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 5rem ;
+    flex-direction: column;
+}
+.winning-message button {
+    font-size: 3rem;
+    background-color: white;
+    border: 1px solid black;
+    padding: .2em .5em;
+    cursor: pointer;
+}
+.winning-message button:hover {
+    background-color: black;
+    border-color: white;
+    color: white;
+}
+.winning-message.show {
+    display: flex;
+}
+
