@@ -1,11 +1,11 @@
 # html
     game title
     score board 
-    user score
+    user score/level
     options board
     game board with id board
-    reset button
-    win / next level buttons
+    start button
+    
 
 # CSS
     set box sizing to border size
@@ -19,17 +19,16 @@
         set the game rules at right hand side 
 
     set a class snake: 
-        inner text is "=" grey
-        background is "black" 
+        inner text is "xx"
+        background is "red" 
 
 
     set a class food:
-        background color : brown
+        background color : golden
     
     style reset/win button
-        to disappear when the game is being played, 
-        appear when the game is over.
-        with gray background 
+        only appear when the game is over.
+        with dark background 
         
 # Javascript
 ## building the board:
@@ -68,18 +67,28 @@
     ##
         
 # tickets:
-  - remove the grids 
+
+  
+  - game over if the snake eat itself
+
   - have the snake head looks special
   - make the food look better than just yellow square
   - create the game options 
-  - write the game rules
+
   - add sound effects
   - add max score 
   - after game over the screen doesn't show buttons!
   - style the food
-  - style the snake 
+  - style the snake
+  - style the snake head
+  
+  - win / next level buttons
+
 
 # closed tickets
+  - write the game rules
  - remove console.logs(snake array, food, out of board)
- 
-
+ - remove cells testing boarders and numbering
+ - fix the food random number 
+ - remove the grids 
+- padding to the game title
