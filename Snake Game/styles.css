@@ -31,7 +31,8 @@
     font-family: equilibrium, 'Lucida Sans';
     grid-area: header;
     text-align: center;
-    padding: 15px;         
+    padding: 15px;   
+    margin-top: 1%;      
   }
   nav{
       grid-area: ctr-zone;
@@ -43,6 +44,7 @@
       border: olivedrab 2px solid;
       
   }
+  
   #cover {
         margin-left: 20%;
         
@@ -57,16 +59,26 @@
     align-content: center;
   }
   .cell{
-    border: yellowgreen 1px solid;
     width: 25px;
     height: 25px;
     font-size: 10px;
+    background-color: rgb(65, 201, 12);
+    
+   
+    
         }
+
   .help {
       grid-area: help-zone;
       color: yellow;
       margin: 20px;
+      padding: 3px;
+
   }
+  .help > h2, .help > h3 {
+    margin: 15px 0px;
+    color: rgb(241, 14, 90);
+  } 
 
   .footer {
     grid-area: m-ft;  
@@ -74,9 +86,9 @@
 
   }
 
-  .cell {
-    background-color: teal;
-    border: white 2px solid;
+  .food {
+    background-color: orange;
+    border-radius: 25%;
   }
 
   button {

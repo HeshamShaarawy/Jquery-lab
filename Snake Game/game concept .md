@@ -11,7 +11,7 @@ Snake game
 a board that shows the user score: which is the number of foot items the snake ate.
 
 ## game board:
-  which is of 25 x 25 squares 
+  which is of 20 x 20 squares 
 
 ## snake: 
   which starts at the middle of the board with 4 segments, 

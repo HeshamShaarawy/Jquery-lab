@@ -1,7 +1,7 @@
 # html
     game title
     score board 
-        user score
+    user score
     options board
     game board with id board
     reset button
@@ -67,7 +67,19 @@
     
     ##
         
+# tickets:
+  - remove the grids 
+  - have the snake head looks special
+  - make the food look better than just yellow square
+  - create the game options 
+  - write the game rules
+  - add sound effects
+  - add max score 
+  - after game over the screen doesn't show buttons!
+  - style the food
+  - style the snake 
 
-
-
+# closed tickets
+ - remove console.logs(snake array, food, out of board)
+ 
 
