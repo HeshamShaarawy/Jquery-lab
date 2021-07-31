@@ -71,24 +71,36 @@
   
   - game over if the snake eat itself
 
-  - have the snake head looks special
+  
   - make the food look better than just yellow square
-  - create the game options 
-
+  - create the game options (multiple items)
+    - control snake speed
+    - control level
   - add sound effects
-  - add max score 
-  - after game over the screen doesn't show buttons!
+ 
+  - winning function:
+      - add max score 
+      - add to the score board declaration of max score
+      - add winning function   
+ 
   - style the food
   - style the snake
   - style the snake head
   
   - win / next level buttons
 
+  - test for responsive design
+  - improve the cute snake logo
+  - add a game logo
 
 # closed tickets
-  - write the game rules
+ - write the game rules
  - remove console.logs(snake array, food, out of board)
  - remove cells testing boarders and numbering
  - fix the food random number 
  - remove the grids 
-- padding to the game title
+ - padding to the game title
+ - after game over the screen doesn't show buttons!
+ - review restart button function
+ - review cancel button function
+ - have the snake head looks special

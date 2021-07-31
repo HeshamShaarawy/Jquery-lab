@@ -8,6 +8,7 @@ let  userKey
 let snl = snake.length -1
 let head = `${snake[0][0]}0${snake[0][1]}`
 let gameON
+let drawBoard = 0
 
 
 
@@ -19,7 +20,7 @@ function setBoard() {
             let newcell = `<div class="cell" id="${y}0${x}">`       
             $("#board").append(newcell)
          }
-    }
+    } drawBoard = 1
 }
 
 function draw(){
@@ -31,6 +32,8 @@ function draw(){
         $(`#${segment}`).text("$#$")
         $(`#${segment}`).css('borderRadius' , '30%');
         }
+        head = `${snake[0][0]}0${snake[0][1]}`
+        $(`#${head}`).css('backgroundColor', 'blue')
      $(`#${snake[snl][0]}0${snake[snl][1]}`).css('borderRadius', '')
      $(`#${snake[snl][0]}0${snake[snl][1]}`).css('background-color', '') 
      $(`#${snake[snl][0]}0${snake[snl][1]}`).text('')     
@@ -65,7 +68,6 @@ function sollow (){
     console.log(score + "score!!")
     $(`#score`).text(`${score}`) 
     snl = snake.length -1
-    console.log("yummy yummy in my tummy")
     $(`#${head}`).removeClass("food")
         
 }
@@ -96,8 +98,7 @@ document.onkeydown = function(e){
 
 
 function start (){
-    $(`#winningMessage`).removeClass('show')
-    setBoard()
+    if (drawBoard == 0){ setBoard()};
     draw()
     food()
     gameON = window.setInterval(move, 1000)
@@ -106,13 +107,36 @@ function start (){
 
 function gameOver() {
     clearInterval(gameON)
-    $(`#winningMessage`).addClass('')
-    
+    $(`#winningMessage`).addClass('show')
+     
  }
-$('#restartButton').click(start())
-
-
-
+$('#restartButton').click( ()=> {
+    for(let i = 0; i <= snl; i++){
+        let segment = `${snake[i][0]}0${snake[i][1]}`        
+        $(`#${segment}`).css('background-color', '')
+        $(`#${segment}`).text("")
+        $(`#${segment}`).css('borderRadius' , '');
+        }
+    $(`#${foodLocation}`).removeClass("food")
+    $(`#winningMessage`).removeClass('show');
+    resetVariables()
+    start();
+    })
+$('#cancelButton').click(() => {
+    $(`#winningMessage`).removeClass('show')
+})
+function resetVariables () {
+    score  = 0
+    boardSize =  20
+    growth = 1
+    speed  = 2
+    snake  = [ [10,10], [10,11],[10,12],[10,13],[10,14] ] 
+    dx = 0 , dy = -1
+    userKey
+    snl = snake.length -1
+    head = `${snake[0][0]}0${snake[0][1]}`
+    $(`#score`).text(`Zero`) 
+}
 
 
 

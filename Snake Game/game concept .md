@@ -1,4 +1,4 @@
-
+ 
 # The Game objective:
 This is a single player game where the player controls the directions of a moving snake to eat the food that appears on the playing board, and avoid both running into the borders of the board or into itself. As the snack eat food it grows and the player score points. 
 

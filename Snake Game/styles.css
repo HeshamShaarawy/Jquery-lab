@@ -13,8 +13,8 @@
     background-color: #122142;
     font-family: 'Lucida Sans';
     color: white;
-    width: 100vw;
-    height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
     display: grid;
     grid-template-columns: 20% auto 20%;
     grid-template-rows: 10% auto 10%;
@@ -57,13 +57,14 @@
     align-items: center;
     grid-template-columns: repeat(20, auto);
     align-content: center;
+    
   }
   .cell{
     width: 25px;
     height: 25px;
     font-size: 10px;
     background-color: rgb(65, 201, 12);
-    
+    border-radius: 15%;
    
     
         }
@@ -91,8 +92,7 @@
     border-radius: 25%;
   }
 
-  button {
-      display: none;
+ 
   }
   #level {
       color: yellowgreen;
