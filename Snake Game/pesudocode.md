@@ -67,28 +67,17 @@
     ##
         
 # tickets:
+- responsive design for each screen size.
+- add touch as input for snake movement
 
   
-  
 
   
-  - make the food look better than just yellow square
-  - create the game options (multiple items)
+   - create the game options (multiple items)
     - control snake speed
     - control level
   - add sound effects
- 
- 
- 
-  - style the food
-  - style the snake
-  - style the snake head
-  
-  - win / next level buttons
 
-  - test for responsive design
-  - add speed to the game board 
-  - add a game logo
 
 # closed tickets
  - write the game rules
@@ -102,8 +91,16 @@
  - review cancel button function
  - have the snake head looks special
  - winning function:
-      - add max score 
-      - add to the score board declaration of max score
-      - add winning function  
+    - add max score 
+    - add to the score board declaration of max score
+    - add winning function  
  - improve the cute snake logo
  - game over if the snake eat itself
+ - style the food to be flashing.
+ - next level fixes: 
+    - should not go to restart/cancel screen"
+    - score  to continue and not restarts from 0
+    - speed need to go up 
+ - win / next level buttons
+ - add speed to the game board 
+ - test for responsive design

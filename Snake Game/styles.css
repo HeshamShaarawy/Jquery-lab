@@ -13,8 +13,8 @@
     background-color: #122142;
     font-family: 'Lucida Sans';
     color: white;
-    max-width: 100vw;
-    max-height: 100vh;
+    width: 100vw;
+    height: 100vh;
     display: grid;
     grid-template-columns: 20% auto 20%;
     grid-template-rows: 10% auto 10%;
@@ -107,7 +107,7 @@
 
   }
     
-    #level, #score , #goal {
+    #level, #score , #goal, #speedvalue {
     margin-top: 5px; 
     color: yellowgreen;
     margin-right: 10px;
