@@ -69,7 +69,7 @@
 # tickets:
 
   
-  - game over if the snake eat itself
+  
 
   
   - make the food look better than just yellow square
@@ -78,10 +78,7 @@
     - control level
   - add sound effects
  
-  - winning function:
-      - add max score 
-      - add to the score board declaration of max score
-      - add winning function   
+ 
  
   - style the food
   - style the snake
@@ -90,7 +87,7 @@
   - win / next level buttons
 
   - test for responsive design
-  - improve the cute snake logo
+  - add speed to the game board 
   - add a game logo
 
 # closed tickets
@@ -104,3 +101,9 @@
  - review restart button function
  - review cancel button function
  - have the snake head looks special
+ - winning function:
+      - add max score 
+      - add to the score board declaration of max score
+      - add winning function  
+ - improve the cute snake logo
+ - game over if the snake eat itself

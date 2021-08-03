@@ -1,7 +1,6 @@
 let score  = 0
 let boardSize =  20
-let growth = 1
-let speed  = 2
+let speed = 3
 let snake  = [ [10,10], [10,11],[10,12],[10,13],[10,14] ] 
 let  dx = 0 , dy = -1
 let  userKey
@@ -9,6 +8,12 @@ let snl = snake.length -1
 let head = `${snake[0][0]}0${snake[0][1]}`
 let gameON
 let drawBoard = 0
+let goal =  500
+let level
+
+ 
+
+
 
 
 
@@ -24,10 +29,11 @@ function setBoard() {
 }
 
 function draw(){
+    console.log(speed)
     for(let i = 0; i <= snl; i++){
         let segment = `${snake[i][0]}0${snake[i][1]}`        
         if ($(`#${segment}`).val()  == undefined){ gameOver() }
-       // if (i > 0 && `${segment}` == `${head}`){gameOver()}
+        if(i > 0 && snake[0][0] == snake[i][0] && snake[0][1] == snake[i][1]){gameOver()}
         $(`#${segment}`).css('background-color', 'red')
         $(`#${segment}`).text("$#$")
         $(`#${segment}`).css('borderRadius' , '30%');
@@ -57,6 +63,7 @@ function move() {
         snake.unshift(newSegment)   
         $(`#${head}`).hasClass("food")? sollow() : snake.pop(snake[snl -1]) 
         draw()       
+        
 }
 
 
@@ -65,17 +72,17 @@ function move() {
 function sollow (){
     food()
     score += 100
-    console.log(score + "score!!")
     $(`#score`).text(`${score}`) 
+    if(score == goal){winning()}
     snl = snake.length -1
     $(`#${head}`).removeClass("food")
+   
         
 }
 
 
 document.onkeydown = function(e){
     userKey = (e.key)
-    console.log (userKey)
     if (userKey == "s" || userKey == "S"){
         start()
     }
@@ -99,17 +106,44 @@ document.onkeydown = function(e){
 
 function start (){
     if (drawBoard == 0){ setBoard()};
+    
+    $(`#goal`).text(`${goal}`)
+    $(`#speedvalue`).text(`${speed}`)
     draw()
     food()
-    gameON = window.setInterval(move, 1000)
+    gameON = window.setInterval(move, 1000/speed)
     
 }
 
 function gameOver() {
     clearInterval(gameON)
+    $('#winningMessage > div').text('Game Over')
     $(`#winningMessage`).addClass('show')
      
  }
+
+function resetVariables () {
+    score  = 0
+    boardSize =  20
+    speed = 3
+    growth = 1
+    snake  = [ [10,10], [10,11],[10,12],[10,13],[10,14] ] 
+    dx = 0 , dy = -1
+    userKey
+    snl = snake.length -1
+    head = `${snake[0][0]}0${snake[0][1]}`
+    $(`#score`).text(`Zero`) 
+}
+
+$('#nextLevel').click( ()=> {
+    speed += 2
+    goal += goal
+    $("#nextLevel").css('display', 'none')
+    $(`#winningMessage`).removeClass('show')
+    start()
+    
+})
+
 $('#restartButton').click( ()=> {
     for(let i = 0; i <= snl; i++){
         let segment = `${snake[i][0]}0${snake[i][1]}`        
@@ -125,21 +159,19 @@ $('#restartButton').click( ()=> {
 $('#cancelButton').click(() => {
     $(`#winningMessage`).removeClass('show')
 })
-function resetVariables () {
-    score  = 0
-    boardSize =  20
-    growth = 1
-    speed  = 2
-    snake  = [ [10,10], [10,11],[10,12],[10,13],[10,14] ] 
-    dx = 0 , dy = -1
-    userKey
-    snl = snake.length -1
-    head = `${snake[0][0]}0${snake[0][1]}`
-    $(`#score`).text(`Zero`) 
+
+
+function  winning() {
+clearInterval(gameON)
+$('#winningMessage > div').text('WiNNeR')
+$("#nextLevel").css('display', 'flex')
+$(`#winningMessage`).addClass('show')
 }
 
+///code assets 
 
-
+//
+//
 
 //   d == "up"? dy = -1 : d == "dn"? dy = 1 : dy = 0;
     //   d == "lft"? dx = -1: d == "rgt"? dx = 1 : dx = 0;       

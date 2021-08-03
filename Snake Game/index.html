@@ -15,14 +15,35 @@
 <body>
     <h1>Snake Game</h1>
     <nav>
-     options to select from:
+    <!--  options to select from:
+     <br>
+     <form  id="options">
+     <label>Select a speed Level:</label>
+        <select name="level" id="level-list">
+            <optgroup label="snake speed">
+                <option value="1">very easy</option>  
+                <option value="2">Easy</option>
+                <option value="3">Medium</option>
+                <option value="3.2">Hard</option>
+                <option value="3.6">very Hard</option>
+            </optgroup>
+            
+        </select> 
+<    
+    
+    <input type="submit">
+    </form>     -->
     </nav>
     <main>
         <div id="board"></div> 
-        <img id="cover" src="resources/snake-cartoon.png"> 
+        <img id="cover" src="resources/beauty snake.png">
+           Hi! i am babe snake that is very hungry can you help me find some tasty food!
+    </img>
     </main>
     <div class="footer">
         Level:<span id="level">Slug </span>
+        Speed:<span id="speedvalue"></span>
+        Goal:<span id="goal"></span>
         Score: <span id="score">zer0 </span>
     </div>
         
@@ -38,7 +59,8 @@
 
     </div>
     <div class="winning-message" id="winningMessage">
-        <div>Game Over</div>
+        <div></div>
+        <button id='nextLevel'> to next level</button>
         <button id="restartButton">Restart</button>
         <button id="cancelButton"> Cancel</button>
     </div>

@@ -31,23 +31,30 @@
     font-family: equilibrium, 'Lucida Sans';
     grid-area: header;
     text-align: center;
-    padding: 15px;   
+    padding: 5px;   
     margin-top: 1%;      
   }
   nav{
       grid-area: ctr-zone;
       color: silver;
       margin: 20px;
+      padding: 10px;
+  }
+  nav :nth-child{
+    padding: 10px;
   }
   main{
       grid-area: game-zone;
       border: olivedrab 2px solid;
-      
+      text-align: center;  
   }
   
   #cover {
-        margin-left: 20%;
-        
+    display: block;
+    margin: auto;
+    width: 25%;
+    padding-top: 2%;  
+      
     }
   #board {
     display: grid;
@@ -81,26 +88,29 @@
     color: rgb(241, 14, 90);
   } 
 
+  @keyframes food {
+    from {background-color: red;}
+    to {background-color: yellow;}
+  }
+
+  .food {
+    background-color: orange;
+    animation: food 1s infinite;
+    border-radius: 50%;
+
+  }
+
+ 
   .footer {
     grid-area: m-ft;  
     color:tomato;
 
   }
-
-  .food {
-    background-color: orange;
-    border-radius: 25%;
-  }
-
- 
-  }
-  #level {
-      color: yellowgreen;
-      margin: 10px;
-  }
-  #score {
+    
+    #level, #score , #goal {
+    margin-top: 5px; 
     color: yellowgreen;
-    margin: 10px;
+    margin-right: 10px;
   }
 
   .winning-message {
@@ -131,5 +141,8 @@
 }
 .winning-message.show {
     display: flex;
+}
+#nextLevel {
+  display: none;
 }
 
