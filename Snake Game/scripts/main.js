@@ -28,8 +28,9 @@ function setBoard() {
     } drawBoard = 1
 }
 
+// drawing the snake function
 function draw(){
-    console.log(speed)
+    
     for(let i = 0; i <= snl; i++){
         let segment = `${snake[i][0]}0${snake[i][1]}`        
         if ($(`#${segment}`).val()  == undefined){ gameOver() }
@@ -45,7 +46,7 @@ function draw(){
      $(`#${snake[snl][0]}0${snake[snl][1]}`).text('')     
     
     }
-
+// creating and drawing the food on the board
 function food(){
     fX = Math.floor(Math.random() * boardSize) + 1;
     fY = Math.floor(Math.random() * boardSize) + 1;
@@ -53,7 +54,7 @@ function food(){
      $(`#${foodLocation}`).addClass("food")
 
     }
-
+// moving the snake on the board
 function move() {  
         head = `${snake[0][0]}0${snake[0][1]}`
         let nX = snake[0][0] , nY = snake[0][1] 
@@ -68,7 +69,7 @@ function move() {
 
 
 
-
+//eating the food
 function sollow (){
     food()
     score += 100
@@ -80,7 +81,7 @@ function sollow (){
         
 }
 
-
+//capturing the user keying
 document.onkeydown = function(e){
     userKey = (e.key)
     if (userKey == "s" || userKey == "S"){
@@ -103,7 +104,7 @@ document.onkeydown = function(e){
     }     
 }
 
-
+//starting the game
 function start (){
     if (drawBoard == 0){ setBoard()};
     
@@ -115,13 +116,33 @@ function start (){
     
 }
 
+// when the user achieve the goal score:
+function  winning() {
+    clearInterval(gameON)
+    $('#winningMessage > div').text('WiNNeR')
+    $("#nextLevel").css('display', 'flex')
+    $(`#winningMessage`).addClass('show')
+    }
+
+
+// offering to go to next level when the player achieve the goal score
+$('#nextLevel').click( ()=> {
+    speed += 2
+    goal += goal
+    $("#nextLevel").css('display', 'none')
+    $(`#winningMessage`).removeClass('show')
+    start()
+    
+})
+
+// lose : stopping the game and displaying a game over message
 function gameOver() {
     clearInterval(gameON)
     $('#winningMessage > div').text('Game Over')
     $(`#winningMessage`).addClass('show')
      
  }
-
+// re-setting the game
 function resetVariables () {
     score  = 0
     boardSize =  20
@@ -135,15 +156,8 @@ function resetVariables () {
     $(`#score`).text(`Zero`) 
 }
 
-$('#nextLevel').click( ()=> {
-    speed += 2
-    goal += goal
-    $("#nextLevel").css('display', 'none')
-    $(`#winningMessage`).removeClass('show')
-    start()
-    
-})
 
+// offering the player to re-play the game 
 $('#restartButton').click( ()=> {
     for(let i = 0; i <= snl; i++){
         let segment = `${snake[i][0]}0${snake[i][1]}`        
@@ -161,62 +175,4 @@ $('#cancelButton').click(() => {
 })
 
 
-function  winning() {
-clearInterval(gameON)
-$('#winningMessage > div').text('WiNNeR')
-$("#nextLevel").css('display', 'flex')
-$(`#winningMessage`).addClass('show')
-}
 
-///code assets 
-
-//
-//
-
-//   d == "up"? dy = -1 : d == "dn"? dy = 1 : dy = 0;
-    //   d == "lft"? dx = -1: d == "rgt"? dx = 1 : dx = 0;       
-    //   dx !== 0? dy = 0:  dx = 0
-    //   dy !== 0? dx = 0:  dy = 0
-
-
-        // if (userKey = "ArrowUp" && dx !== 0){
-        //     dx = 0;
-        //     dy =  -1;
-        // } else if(userKey = "ArrowDown" && dx !== 0) {
-        //     dx = 0
-        //     dy =  +1
-        // }   else if(userKey = "ArrowRight" && dy !== 0) {
-        //     dx =  0
-        //     dy =  1
-        // }   else if (userKey = "ArrowLeft" && dy !== 0) {
-        //     dx =  0
-        //     dy =  -1
-        // }  else {
-        //     return
-        // }  
-
-
-    // switch (userKey) {
-    //     case "ArrowUp":
-    //         dx = 0;
-    //         dy = -1;
-    //         console.log("paris")
-    //         break;
-     
-    //     case "ArrowDown":
-    //         dx = 0;
-    //         dy = +1;
-    //         console.log("paris")
-    //       break;
-    
-    //        case "ArrowRight":
-    //         dx = -1;
-    //         dy =  0;
-  
-    //         break;
-    //     case "ArrowLeft":
-    //         dx = +1;
-    //         dy = 0;
-  
-    //         break;
-    // }

@@ -104,3 +104,8 @@
  - win / next level buttons
  - add speed to the game board 
  - test for responsive design
+ - deploy on github pages
+    - apply github suggested structure of files
+    - rename JS,CSS files.
+    - relink files to html
+- add remarks within the js code
