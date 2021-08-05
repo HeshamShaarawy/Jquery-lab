@@ -1,3 +1,5 @@
+![image of wire Frame](wireFrame.jpg)
+
 # html
     game title
     score board 
@@ -66,19 +68,10 @@
     
     ##
         
-# tickets:
-- responsive design for each screen size.
-- add touch as input for snake movement
-
-  
-
-  
-   - create the game options (multiple items)
-    - control snake speed
-    - control level
-  - add sound effects
 
 
+# Open tickets
+    none
 # closed tickets
  - write the game rules
  - remove console.logs(snake array, food, out of board)
@@ -109,3 +102,13 @@
     - rename JS,CSS files.
     - relink files to html
 - add remarks within the js code
+- responsive design
+
+
+# future ideas for enhancements:  
+- add touch as input for snake movement
+   - create the game options (multiple items)
+    - control snake speed
+    - control level
+- add sound effects
+

@@ -7,10 +7,12 @@
 
 @font-face {
     font-family: equilibrium;
-    src: url(resources/equilibrium.woff2);
+    src: url(../assets/equilibrium.woff2);
 }
+
    body {
     background-color: #122142;
+    
     font-family: 'Lucida Sans';
     color: white;
     width: 100vw;
@@ -25,6 +27,11 @@
     ;
     border: 2px white solid;
   }
+
+ 
+
+
+
   h1 {
     border: 2px green solid;
     color: green;
@@ -32,7 +39,8 @@
     grid-area: header;
     text-align: center;
     padding: 5px;   
-    margin-top: 1%;      
+    margin-top: 1%;
+    font-size: 2pc;      
   }
   nav{
       grid-area: ctr-zone;
@@ -146,3 +154,27 @@
   display: none;
 }
 
+@media screen and (max-width: 768px) {
+  body {
+    grid-template-columns: 95vw;
+    grid-template-rows: 10vh 80vh 5vh 70vh 30vh;
+    grid-template-areas:       
+        'header'
+        'game-zone'
+        'm-ft'
+        'help-zone'
+        'ctr-zone';
+    border: none;  
+    
+  } 
+
+  h1 {
+    font-size: 5vh;
+  }
+  .cell {
+    width: 2vw;
+    height: 2vw;
+    font-size: 1vw;
+    background-color: greenyellow;
+  }
+}
